@@ -22,9 +22,8 @@ const ProductList = ({ products, currency, handleCurrencyChange }) => {
             <div className={styles.gridHeaderItem}>Type</div>
             <div className={styles.gridHeaderItem}>Animal</div>
             <div className={styles.gridHeaderItem}>Product</div>
-            <div className={styles.gridHeaderItem}>Price (
+            <div className={styles.gridHeaderItem}>
               <CurrencySelect currency={currency} handleCurrencyChange={handleCurrencyChange} />
-              )
             </div>
           </div>
           {products.map((product, index) => (
