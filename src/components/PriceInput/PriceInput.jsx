@@ -24,7 +24,7 @@ const PriceInput = ({ onEnterPrice, price }) => {
       <label
         htmlFor="priceInput"
         className={`${styles.label} ${isFocused || price ? styles.labelActive : ''}`}
-      >Price</label>
+      >Price (PLN)</label>
       <input
         type="text"
         id="priceInput"
