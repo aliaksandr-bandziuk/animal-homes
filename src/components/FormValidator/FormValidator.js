@@ -7,11 +7,11 @@ const FormValidator = ({ productName, price, onSubmit }) => {
     event.preventDefault();
 
     if (productName.trim() === '' || price.trim() === '') {
-      alert('Пожалуйста, заполните все поля');
+      alert('Please fill in all fields');
     } else if (!/^[\w\sа-яА-ЯёЁ]{3,}$/.test(productName)) {
-      alert('Пожалуйста, введите корректное название товара (только буквы, минимум 3 символа)');
+      alert('Please enter a valid product name (letters only, minimum 3 characters)');
     } else if (isNaN(price) || +price <= 0) {
-      alert('Пожалуйста, введите корректную цену (число больше нуля)');
+      alert('Please enter a valid price (a number greater than zero)');
     } else {
       onSubmit();
     }
