@@ -44,12 +44,12 @@ export const Houses = () => {
 
   const handleFormSubmit = () => {
     if (productName.trim() === '' || price.trim() === '') {
-      alert('Пожалуйста, заполните все поля');
+      alert('Please fill all the fields');
       return;
     }
 
     if (isNaN(price) || +price <= 0) {
-      alert('Пожалуйста, введите корректную цену (число больше нуля)');
+      alert('Please enter a valid price (a number greater than zero)');
       return;
     }
 
