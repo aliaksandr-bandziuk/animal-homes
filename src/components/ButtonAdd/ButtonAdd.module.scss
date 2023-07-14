@@ -1,0 +1,20 @@
+.buttonSubmit {
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: 1px solid #b7aee0;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  background-color: #fff;
+  color: #b7aee0;
+
+  &:hover {
+    background-color: #ed3760;
+    color: #fff;
+    border: 1px solid #ed3760;
+  }
+
+    @media (max-width: 768px) {
+    font-size: 14px;
+  }
+}

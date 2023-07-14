@@ -1,0 +1,46 @@
+.selectContainer {
+  position: relative;
+  display: inline-block;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+}
+
+.select {
+  appearance: none;
+  padding: 10px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 2px solid #b7aee0;
+  outline: none;
+  background-color: white;
+  color: #b7aee0;
+  width: 200px;
+  cursor: pointer;
+  position: relative;
+  background-image: url('../../images/arrow-down.png');
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: 12px 12px;
+  padding-right: 30px;
+  
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+}
+
+.select option {
+  background-color: white;
+  color: black;
+}
+
+.select option:hover {
+  background-color: #ed3760;
+}
+
+.select option:checked {
+  background-color: #007bff;
+  color: white;
+}

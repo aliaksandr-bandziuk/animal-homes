@@ -1,0 +1,43 @@
+.priceInput {
+  position: relative;
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+
+  .label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+    pointer-events: none;
+    color: #b7aee0;
+    font-size: 14px;
+  }
+
+  .labelActive {
+    top: 0;
+    font-size: 12px;
+    color: #ed3760;
+    transform: translateY(-60%);
+  }
+
+  .input {
+    padding: 10px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid #b7aee0;
+    outline: none;
+    transition: all 0.3s ease;
+
+    @media (max-width: 768px) {
+      width: 97%;
+    }
+
+    &:focus {
+      border-color: #ed3760;
+    }
+  }
+}
