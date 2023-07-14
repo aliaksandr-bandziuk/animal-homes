@@ -1,0 +1,35 @@
+.selectContainer {
+  position: relative;
+  display: inline-block;
+}
+
+.select {
+  appearance: none;
+  padding-left: 5px;
+  border: none;
+  outline: none;
+  background-color: #b7aee0;
+  color: #fff;
+  width: 70px;
+  cursor: pointer;
+  position: relative;
+  background-image: url('../../images/arrow-down-white.png');
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 12px 12px;
+  // padding-right: 30px; 
+}
+
+.select option {
+  background-color: white;
+  color: black;
+}
+
+.select option:hover {
+  background-color: #ed3760;
+}
+
+.select option:checked {
+  background-color: #007bff;
+  color: white;
+}

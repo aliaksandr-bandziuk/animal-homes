@@ -23,6 +23,7 @@ export const Houses = () => {
   const [sortEnabled, setSortEnabled] = useState(false);
   const [sortDirection, setSortDirection] = useState('asc');
   const [searchQuery, setSearchQuery] = useState('');
+  const [currency, setCurrency] = useState('PLN'); // Валюта по умолчанию - PLN
 
   const handleProductSelect = (product) => {
     setSelectedProduct(product);
@@ -146,7 +147,7 @@ export const Houses = () => {
           <SortSelect sortDirection={sortDirection} handleSortDirectionChange={handleSortDirectionChange} />
         )}
 
-        <ProductList products={filteredProducts} />
+        <ProductList products={filteredProducts} currency={currency} handleCurrencyChange={setCurrency} />
       </div>
     </div>
   );
