@@ -1,6 +1,7 @@
 .searchInput {
   position: relative;
   margin-bottom: 35px;
+  flex-shrink: 0;
 
   .label {
     position: absolute;
@@ -21,7 +22,8 @@
   }
 
   .input {
-    width: 98%;
+    width: 100%;
+    box-sizing: border-box;
     padding: 10px;
     border-top: none;
     border-left: none;

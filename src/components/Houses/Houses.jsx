@@ -21,9 +21,11 @@ export const Houses = () => {
   const [products, setProducts] = useState([]);
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [sortEnabled, setSortEnabled] = useState(false);
-  const [sortDirection, setSortDirection] = useState('asc');
+  const [sortDirection, setSortDirection] = useState('');
   const [searchQuery, setSearchQuery] = useState('');
-  const [currency, setCurrency] = useState('PLN'); // Валюта по умолчанию - PLN
+  const [currency, setCurrency] = useState('PLN');
+
+  const totalAddedProducts = products.length;
 
   const handleProductSelect = (product) => {
     setSelectedProduct(product);
@@ -106,8 +108,15 @@ export const Houses = () => {
 
   const filteredProducts = products.filter((product) => {
     const productNameLower = product.productName.toLowerCase();
+    const selectedProductLower = product.selectedProduct.toLowerCase();
+    const selectedCustomerLower = product.selectedCustomer.toLowerCase();
     const searchQueryLower = searchQuery.toLowerCase();
-    return productNameLower.includes(searchQueryLower);
+
+    return (
+      productNameLower.includes(searchQueryLower) ||
+      selectedProductLower.includes(searchQueryLower) ||
+      selectedCustomerLower.includes(searchQueryLower)
+    );
   });
 
   return (
@@ -139,15 +148,28 @@ export const Houses = () => {
           />
         </div>
 
-        <h2>You added</h2>
+        <h2>
+          {totalAddedProducts > 0
+            ? `You added ${totalAddedProducts} ${totalAddedProducts > 1 ? 'houses' : 'house'}`
+            : 'No added houses'}
+        </h2>
 
-        <SearchInput searchQuery={searchQuery} handleSearchChange={handleSearchChange} />
+        <SearchInput
+          searchQuery={searchQuery}
+          handleSearchChange={handleSearchChange}
+        />
 
         {sortEnabled && (
-          <SortSelect sortDirection={sortDirection} handleSortDirectionChange={handleSortDirectionChange} />
+          <SortSelect
+            sortDirection={sortDirection}
+            handleSortDirectionChange={handleSortDirectionChange}
+          />
         )}
 
-        <ProductList products={filteredProducts} currency={currency} handleCurrencyChange={setCurrency} />
+        <ProductList
+          products={filteredProducts}
+          currency={currency}
+          handleCurrencyChange={setCurrency} />
       </div>
     </div>
   );

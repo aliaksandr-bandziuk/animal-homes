@@ -1,6 +1,10 @@
 .gridContainer {
   display: grid;
   // grid-gap: 10px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr; // Один столбец на маленьких экранах
+  }
 }
 
 .gridHeader {
@@ -10,12 +14,11 @@
   color: white;
   font-weight: bold;
   padding: 10px;
-}
+  text-align: center;
 
-.gridHeaderItem {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @media (max-width: 768px) {
+    display: none; // Скрыть заголовок на маленьких экранах
+  }
 }
 
 .gridRow {
@@ -23,10 +26,21 @@
   grid-template-columns: repeat(4, 1fr);
   border: 1px solid #ccc;
   padding: 10px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr; // Один столбец на маленьких экранах
+    margin-bottom: 10px;
+  }
 }
 
 .gridCell {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .gridCell {
+    flex-direction: column; // Столбцы элементов на маленьких экранах
+  }
 }
